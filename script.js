@@ -1,6 +1,6 @@
 function promptNumbers() {
     for (let i = 0; i < 10; i++) {
-        const userInput = prompt(`Введіть число більше 100`);
+        const userInput = prompt(`Введіть число більше 100 (спроба ${i + 1}):`);
 
         if (userInput === null || userInput === "" || isNaN(userInput)) {
             console.log(" спробуйте ввести ще раз");
