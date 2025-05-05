@@ -1,20 +1,21 @@
 function promptNumbers() {
+    let lastInput;
+
     for (let i = 0; i < 10; i++) {
-        const userInput = prompt(`Введіть число більше 100 (спроба ${i + 1}):`);
+        lastInput = prompt(`Введіть число більше 100 (спроба ${i + 1}):`);
 
-        if (userInput === null || userInput === "" || isNaN(userInput)) {
-            console.log(" спробуйте ввести ще раз");
-            continue;
-        }
+        if (lastInput === null || lastInput.trim() === "") {
+            break; }
 
-        const number = Number(userInput);
+        const number = Number(lastInput);
+        if (isNaN(number)) {
+            break; }
+
         if (number > 100) {
-            console.log("Ви ввели число більше 100");
-            break;
-        } else {
-            console.log("Ви ввели число менше або рівне 100, введіть число більше 100");
-        }
-    }
-}
+            break;}
+     else {
+            alert("Число має бути більше 100. Спробуйте ще раз.");  }  }
+
+    console.log(`Останнє введення користувача: ${lastInput}`);   }
 
 promptNumbers();
